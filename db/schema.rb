@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2019_01_16_200441) do
 
   create_table "drinks", force: :cascade do |t|
     t.string "title"
-    t.string "string"
     t.string "description"
     t.string "steps"
     t.string "source"
@@ -49,10 +48,8 @@ ActiveRecord::Schema.define(version: 2019_01_16_200441) do
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.string "drink"
-    t.string "references"
+    t.references "drink"
     t.string "description"
-    t.string "string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
