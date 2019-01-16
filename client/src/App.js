@@ -1,31 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react';
 
 class App extends Component {
+  state = {}
   componentDidMount() {
-    window.fetch('/api/drinks')
+    this.getDrinks()
+  }
+  fetch (url) {
+    return window.fetch(url)
     .then(res => res.json())
-    .then(json => console.log(json))
     .catch(err => err)
+  }
+
+  getDrinks() {
+    this.fetch('/api/drinks') 
+    .then(drinks => {
+      if (drinks.length) {
+        this.setState({drinks: drinks})
+        this.getDrink(drinks[0].id)
+      } else {
+        this.setState({drinks: []})
+      }
+    })
+  } 
+  getDrink(id) {
+    this.fetch(`/api/drinks/${id}`)
+    .then(drink => this.setState({drink: drink}))
+  }
+  componentDidUpdate() {
+    console.log(this.state)
   }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
       </div>
     );
   }
