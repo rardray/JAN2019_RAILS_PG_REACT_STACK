@@ -15,10 +15,10 @@ class Dash extends Component {
 
   componentDidMount() {
     this.getDrinks();
-  }
+  };
+
   gets = url => {
-    return window
-      .fetch(url)
+    return fetch(url)
       .then(res => res.json())
       .catch(err => err);
   };
@@ -33,6 +33,7 @@ class Dash extends Component {
       }
     });
   };
+  
   getDrink = id => {
     this.gets(`/api/drinks/${id}`).then(drink =>
       this.setState({ drink: drink })
