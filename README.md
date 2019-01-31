@@ -1,25 +1,15 @@
-# README
+## Smoothie Recipe Web App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Veiw Final Application](https://warm-plateau-97620.herokuapp.com)
 
-Things you may want to cover:
+### Full Stack Web App Using Rails, Postgres, and Create React App
 
-* Ruby version
+### Goals for this exercise
 
-* System dependencies
+- Get an introduction to rails for backend production
+- Build a RESTFUL API and deploy to heroku.
 
-* Configuration
+this app was built from a tutorial with some minor changes, particularly in React Code.  Changes were mainly aesthetic.  Also made some minor changes to Active Admin views to allow for ingredient referencing using GUI.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-Learning Rails and SQL with React
+tutorial can be found at:
+[A Rock Solid, Modern Web Stack—Rails 5 API + ActiveAdmin + Create React App on Heroku](https://blog.heroku.com/a-rock-solid-modern-web-stack)
